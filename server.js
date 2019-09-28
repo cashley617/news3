@@ -28,8 +28,10 @@ app.use(express.json());
 // Uses public folder
 app.use(express.static("public"));
 
+
 // Connecting to Mongo DB
-mongoose.connect("mongodb://localhost/unit18PopulaterNew", { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/unit18PopulaterNew"
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
     // var databaseUrl = "news";
     // mongoose.Promise = Promise;
     // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news";
