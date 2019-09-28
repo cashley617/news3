@@ -30,10 +30,10 @@ app.use(express.static("public"));
 
 
 // Connecting to Mongo DB
+// mongoose.Promise = Promise;
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/unit18PopulaterNew"
 mongoose.connect(MONGODB_URI, { useNewUrlParser: false });
     // var databaseUrl = "news";
-    // mongoose.Promise = Promise;
     // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news";
     // mongoose.connect(MONGODB_URI);
 
@@ -95,7 +95,7 @@ app.get("/scrape", function (req, res) {
 });
 
 // Route for getting all Articles from the db
-app.get("/", function (req, res) {
+app.get("/articles", function (req, res) {
     db.Article.find({})
         .then(function (dbArticle) {
             res.json(dbArticle);
