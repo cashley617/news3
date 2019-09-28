@@ -31,7 +31,7 @@ app.use(express.static("public"));
 
 // Connecting to Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/unit18PopulaterNew"
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: false });
     // var databaseUrl = "news";
     // mongoose.Promise = Promise;
     // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news";
